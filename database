@@ -1,1 +1,91 @@
+-- phpMyAdmin SQL Dump
+-- version 5.2.0
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: May 19, 2023 at 01:36 PM
+-- Server version: 10.4.27-MariaDB
+-- PHP Version: 8.1.12
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `atm`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `accounttbl`
+--
+
+CREATE TABLE `accounttbl` (
+  `Account_number` int(15) NOT NULL,
+  `Name` varchar(20) NOT NULL,
+  `f_name` varchar(20) NOT NULL,
+  `Address` varchar(30) NOT NULL,
+  `Pin_code` int(10) NOT NULL,
+  `Occcupation` varchar(20) NOT NULL,
+  `Phone_no` int(20) NOT NULL,
+  `DOB` date NOT NULL,
+  `Education` varchar(10) NOT NULL,
+  `Balance` int(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `accounttbl`
+--
+
+INSERT INTO `accounttbl` (`Account_number`, `Name`, `f_name`, `Address`, `Pin_code`, `Occcupation`, `Phone_no`, `DOB`, `Education`, `Balance`) VALUES
+(1, 'kishan', 'v', 'sujangadh', 1111, 'afdssf', 75738393, '2010-10-20', 'PU', 998100),
+(2, 'dfd', 'df', 'dsf', 4567, 'adsf', 6532356, '2002-01-20', 'PU', 2900);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `transactiontb`
+--
+
+CREATE TABLE `transactiontb` (
+  `Account_number` int(20) NOT NULL,
+  `Balance` int(50) NOT NULL,
+  `Date` date NOT NULL,
+  `Status` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `transactiontb`
+--
+
+INSERT INTO `transactiontb` (`Account_number`, `Balance`, `Date`, `Status`) VALUES
+(1, 50, '2023-05-06', 'Deposit'),
+(1, 550, '2023-05-06', 'Withdraw'),
+(1, 500, '2023-05-06', 'Deposit'),
+(1, 400, '2023-05-06', 'Withdraw'),
+(2, 4000, '2023-05-06', 'Deposit'),
+(2, 1000, '2023-05-06', 'Withdraw'),
+(1, 100, '2023-05-07', 'Deposit');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `accounttbl`
+--
+ALTER TABLE `accounttbl`
+  ADD PRIMARY KEY (`Account_number`);
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 
